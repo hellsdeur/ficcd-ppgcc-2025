@@ -41,7 +41,14 @@ class Swarm():
                 self.best_position = particle.position.copy()
                 self.best_z = particle.z
 
-def particle_swarm_optimization(cost_function):
+def particle_swarm_optimization(
+        cost_function,
+        DIMENSIONS=DIMENSIONS, GLOBAL_BEST=GLOBAL_BEST,
+        B_LO=B_LO, B_HI=B_HI,
+        POPULATION=POPULATION, V_MAX=V_MAX,
+        PERSONAL_C=PERSONAL_C, SOCIAL_C=SOCIAL_C,
+        CONVERGENCE=CONVERGENCE, MAX_ITER=MAX_ITER
+        ):
 
     swarm = Swarm(POPULATION, V_MAX, cost_function)
 
@@ -107,4 +114,3 @@ if __name__ == "__main__":
     print("Best position: ", best_position)
     print("Best z: ", best_z)
     print("Number of iterations: ", iteration)
-    
