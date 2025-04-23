@@ -92,7 +92,7 @@ def particle_swarm_optimization(cost_function):
                 particle.z = cost_function(particle.position[0], particle.position[1])
 
         if abs(swarm.best_z - GLOBAL_BEST) < CONVERGENCE:
-            print("The swarm has met convergence criteria after " + str(current_iteration) + " iterrations.")
+            # print("The swarm has met convergence criteria after " + str(current_iteration) + " iterrations.")
             break
         current_iteration += 1
     return swarm.best_position, swarm.best_z, current_iteration
@@ -106,4 +106,5 @@ if __name__ == "__main__":
     best_position, best_z, iteration = particle_swarm_optimization(ackley)
     print("Best position: ", best_position)
     print("Best z: ", best_z)
+    print("Number of iterations: ", iteration)
     
