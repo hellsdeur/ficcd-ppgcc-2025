@@ -41,7 +41,7 @@ class Swarm():
                 self.best_position = particle.position.copy()
                 self.best_z = particle.z
 
-def pso(cost_function):
+def particle_swarm_optimization(cost_function):
 
     swarm = Swarm(POPULATION, V_MAX, cost_function)
 
@@ -103,7 +103,7 @@ def ackley(x, y, a=20, b=0.2, c=2*math.pi):
     return -1 * a * arg1 - arg2 + a + np.exp(1)
 
 if __name__ == "__main__":
-    best_position, best_z, iteration = pso(ackley)
+    best_position, best_z, iteration = particle_swarm_optimization(ackley)
     print("Best position: ", best_position)
     print("Best z: ", best_z)
     
