@@ -95,7 +95,7 @@ def pso(cost_function):
             print("The swarm has met convergence criteria after " + str(current_iteration) + " iterrations.")
             break
         current_iteration += 1
-    return swarm.best_position, swarm.best_z
+    return swarm.best_position, swarm.best_z, current_iteration
 
 def ackley(x, y, a=20, b=0.2, c=2*math.pi):
     arg1 = np.exp((-b * np.sqrt(0.5 * (x ** 2 + y ** 2))))
@@ -103,7 +103,7 @@ def ackley(x, y, a=20, b=0.2, c=2*math.pi):
     return -1 * a * arg1 - arg2 + a + np.exp(1)
 
 if __name__ == "__main__":
-    best_position, best_z = pso(ackley)
+    best_position, best_z, iteration = pso(ackley)
     print("Best position: ", best_position)
     print("Best z: ", best_z)
     
